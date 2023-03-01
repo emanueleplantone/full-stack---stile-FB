@@ -149,10 +149,24 @@ class WrapperDB:
             sql = "INSERT INTO PLAN_FB_Commenti (idpost, Autore, Testo) VALUES (%d, %s , %s)"
             cursore.execute(sql, parametri)
             c.commit()
-            #print("INSERIMENTO POST AVVENUTO")
+           
             self.disconnetti(c)
             return True            
         except:
-            #print("\INSERIMENTO POST/i: Si sono verificati degli errori!")
+          
             self.disconnetti(c)
             return False
+
+    def elencoCommenti(self):
+        conn = self.connetti()
+        lista = []
+        try:
+            cur = conn.cursor()
+            sql = "SELECT Idpost, Autore, Testo FROM PLAN_FB_Commenti"
+            cur.execute(sql)
+            lista = cur.fetchall()
+        except:
+            err = "Houston abbiamo un problema..."
+            print(f"[elenco commenti] {err}")
+        self.disconnetti(conn)
+        return lista

@@ -43,3 +43,12 @@ print("*******************************")
 #print("Dopo:")
 #print(wrp.elencoPost(as_dict = True))
 #print("******************************")
+
+print()
+print("***Inserimento commento***")
+tupla1 = (1, "emanuele", "testo1")
+print(wrp.inserisciCommenti(tupla1))
+print()
+
+print("***Visualizzazione***")
+print(wrp.elencoCommenti())
