@@ -139,4 +139,20 @@ class WrapperDB:
             return False
 
     
-
+    #def inserisciCommenti():
+    def inserisciCommenti(self, parametri):
+        #inserisce un nuovo commento
+        #parametri: (autore, testo)
+        try:
+            c = self.connetti() 
+            cursore = c.cursor()
+            sql = "INSERT INTO PLAN_FB_Commenti (idpost, Autore, Testo) VALUES (%d, %s , %s)"
+            cursore.execute(sql, parametri)
+            c.commit()
+            #print("INSERIMENTO POST AVVENUTO")
+            self.disconnetti(c)
+            return True            
+        except:
+            #print("\INSERIMENTO POST/i: Si sono verificati degli errori!")
+            self.disconnetti(c)
+            return False
