@@ -162,7 +162,7 @@ class WrapperDB:
         lista = []
         try:
             cur = conn.cursor()
-            sql = "SELECT Idpost, Autore, Testo FROM PLAN_FB_Commenti"
+            sql = "SELECT id, Idpost, Autore, Testo FROM PLAN_FB_Commenti"
             cur.execute(sql)
             lista = cur.fetchall()
         except:

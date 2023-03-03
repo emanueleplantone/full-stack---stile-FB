@@ -26,14 +26,14 @@ print("Dopo:")
 print(wrp.singoloPost(1))
 print("*******************************")
 
-
-#print()
-#print("\n***** TEST inserisciPost *****")
-#parametri = ("Omino del meteo", "Ieri nevicava!!!")
-#wrp.inserisciPost(parametri)
-#print(wrp.elencoPost(as_dict = True))
-#print("********************************")
-
+"""
+print()
+print("\n***** TEST inserisciPost *****")
+parametri = ("Paolo", "test")
+wrp.inserisciPost(parametri)
+print(wrp.elencoPost(as_dict = True))
+print("********************************")
+"""
 
 #print()
 #print("\n***** TEST eliminaPost *****")
@@ -44,9 +44,10 @@ print("*******************************")
 #print(wrp.elencoPost(as_dict = True))
 #print("******************************")
 
+
 print()
 print("***Inserimento commento***")
-tupla1 = (1, "emanuele", "testo1")
+tupla1 = (2, "emanuele", "testo2")
 print(wrp.inserisciCommenti(tupla1))
 print()
 
